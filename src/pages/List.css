@@ -1,0 +1,110 @@
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  color: var(--blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.chip:hover { color: #fff; border-color: var(--blue); }
+.chip.active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 600; }
+
+.load-more {
+  display: block;
+  margin: 32px auto;
+  padding: 12px 40px;
+}
+
+@media (max-width: 768px) {
+  .filter-group { flex-direction: column; align-items: flex-start; }
+}
+
+.filter-toggle-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.filter-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.filter-toggle-btn:hover { border-color: var(--blue); }
+.filter-toggle-btn.active { background: var(--blue); border-color: var(--blue); }
+
+.filter-reset-btn {
+  background: none;
+  border: 1px solid #e50914;
+  color: #e50914;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: all 0.2s;
+}
+
+.filter-reset-btn:hover { background: #e50914; color: #fff; }
+
+@media (max-width: 480px) {
+  .person-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+  gap: 12px;
+}
+
+}

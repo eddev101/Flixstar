@@ -1,0 +1,58 @@
+.search-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.search-input {
+  flex: 1;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 18px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus { border-color: var(--blue); }
+.search-input::placeholder { color: #555; }
+
+.result-row {
+  display: flex;
+  gap: 16px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.result-row:hover { border-color: var(--blue); }
+
+.result-row img {
+  width: 80px;
+  height: 110px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #0a0f1e;
+}
+
+.result-row img.person-img { border-radius: 0; }
+
+.result-info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.result-title { font-size: 1rem; font-weight: 600; }
+.result-meta { display: flex; gap: 10px; font-size: 0.82rem; color: var(--text-dim); }
+.result-type { color: var(--blue); font-weight: 600; }
+.result-rating { color: var(--yellow); font-size: 0.85rem; }
+.result-dept { color: var(--text-dim); font-size: 0.82rem; }
