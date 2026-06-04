@@ -117,6 +117,27 @@ export default function TVShowDetail() {
         <div className="detail-hero-gradient">
           <div className="container detail-hero-content">
             <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
+
+             {/* Player */}
+        {showPlayer && (
+          <div className="player-section">
+            <div className="servers-row">
+              {servers.map(s => (
+                <button
+                  key={s.name}
+                  className={`server-btn ${activeServer === s.url ? 'active' : ''}`}
+                  onClick={() => setActiveServer(s.url)}
+                >▶ {s.name}</button>
+              ))}
+            </div>
+            <div className="player-wrap">
+              <iframe src={activeServer} allowFullScreen allow="autoplay; fullscreen" />
+            </div>
+            <button className="btn btn-dark close-btn" onClick={() => setShowPlayer(false)}>✕ Close Player</button>
+          </div>
+        )}
+
+            
             <div className="detail-top">
               <img src={show.poster_path ? `${IMG}/w342${show.poster_path}` : 'https://eddev101.github.io/flixstar-app/images/default.webp'} alt={show.name} className="detail-poster" />
               <div className="detail-info">
@@ -145,24 +166,7 @@ export default function TVShowDetail() {
       </div>
 
       <div className="container">
-        {/* Player */}
-        {showPlayer && (
-          <div className="player-section">
-            <div className="servers-row">
-              {servers.map(s => (
-                <button
-                  key={s.name}
-                  className={`server-btn ${activeServer === s.url ? 'active' : ''}`}
-                  onClick={() => setActiveServer(s.url)}
-                >▶ {s.name}</button>
-              ))}
-            </div>
-            <div className="player-wrap">
-              <iframe src={activeServer} allowFullScreen allow="autoplay; fullscreen" />
-            </div>
-            <button className="btn btn-dark close-btn" onClick={() => setShowPlayer(false)}>✕ Close Player</button>
-          </div>
-        )}
+       
 
         {/* Seasons */}
         <div className="section">
